@@ -1,9 +1,8 @@
-import Link from "next/link";
-import ProductCard from "./components/ProductCard";
+import { Metadata } from "next";
 import { getServerSession } from "next-auth";
+import Link from "next/link";
 import { authOptions } from "./api/auth/[...nextauth]/route";
-import desk from "@/public/images/SCR-20240217-qpls.jpeg";
-import Image from "next/image";
+import ProductCard from "./components/ProductCard";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -25,4 +24,9 @@ export default async function Home() {
       /> */}
     </main>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const product = await fetch("");
+  return { title: "product.title", description: "product.description" };
 }
