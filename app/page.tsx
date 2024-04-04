@@ -1,7 +1,6 @@
-import { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./api/auth/authOptions";
 import ProductCard from "./components/ProductCard";
 
 export default async function Home() {
